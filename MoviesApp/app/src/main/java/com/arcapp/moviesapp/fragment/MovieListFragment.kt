@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
@@ -13,7 +12,6 @@ import com.arcapp.moviesapp.R
 import com.arcapp.moviesapp.data.MovieModel
 import com.arcapp.moviesapp.data.mockMovieData
 import com.arcapp.moviesapp.databinding.FragmentMovieListBinding
-
 
 /*
 

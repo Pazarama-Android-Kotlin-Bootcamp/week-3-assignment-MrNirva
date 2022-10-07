@@ -7,13 +7,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.arcapp.moviesapp.R
-import com.arcapp.moviesapp.data.Artist
+import com.arcapp.moviesapp.data.ArtistModel
 import com.bumptech.glide.Glide
 import de.hdodenhof.circleimageview.CircleImageView
 
 class ArtistAdapter(
     private val context:Context,
-    private val artistList: MutableList<Artist>,
+    private val artistList: MutableList<ArtistModel>,
     ) :
     RecyclerView.Adapter<ArtistAdapter.ArtistsViewHolder>() {
 
@@ -33,7 +33,7 @@ class ArtistAdapter(
         private val ivArtistImage = view.findViewById<CircleImageView>(R.id.ivArtistImage)
         private val tvArtistName = view.findViewById<TextView>(R.id.tvArtistName)
 
-        fun bind(context: Context, artist: Artist) {
+        fun bind(context: Context, artist: ArtistModel) {
 
             // add data
             tvArtistName.text = artist.name

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MoviesApp</string>
+    <string name="what_would_you_like_to_watch">What would you like to watch?</string>
 </resources>

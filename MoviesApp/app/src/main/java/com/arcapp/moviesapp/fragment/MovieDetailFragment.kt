@@ -1,20 +1,15 @@
 package com.arcapp.moviesapp.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.RatingBar
-import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.arcapp.moviesapp.R
 import com.arcapp.moviesapp.data.MovieModel
 import com.arcapp.moviesapp.databinding.FragmentMovieDetailBinding
 import com.bumptech.glide.Glide
+
 
 /*
 

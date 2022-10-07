@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:background="@color/black_bg">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -18,7 +19,7 @@
             app:toolbarId="@+id/toolbar"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:layout_scrollInterpolator="@android:anim/decelerate_interpolator"
-            app:contentScrim="?attr/colorPrimary">
+            app:contentScrim="@color/black_bg">
 
             <ImageView
                 android:id="@+id/ivMoviePoster"
@@ -32,8 +33,7 @@
                 android:id="@+id/toolbar"
                 android:layout_height="?attr/actionBarSize"
                 android:layout_width="match_parent"
-                app:layout_collapseMode="pin"
-                android:background="@color/black_bg">
+                app:layout_collapseMode="pin">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -62,7 +62,7 @@
                         android:layout_marginStart="10dp"
                         tools:text="Movie Year"
                         android:textSize="16sp"
-                        android:textColor="@color/gray"
+                        android:textColor="@color/white"
                         android:paddingBottom="2dp" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
