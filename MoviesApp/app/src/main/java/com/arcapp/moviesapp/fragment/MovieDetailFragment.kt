@@ -1,13 +1,16 @@
 package com.arcapp.moviesapp.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.arcapp.moviesapp.R
 import com.arcapp.moviesapp.data.MovieModel
 import com.arcapp.moviesapp.databinding.FragmentMovieDetailBinding
@@ -23,6 +26,7 @@ class MovieDetailFragment : Fragment() {
 
     // using view binding
     private lateinit var bnd:FragmentMovieDetailBinding
+    private lateinit var artistAdapter: ArtistAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -64,6 +68,12 @@ class MovieDetailFragment : Fragment() {
                 bnd.rbImdb.rating = movie.imdb
                 bnd.tvImdbPoint.text = movie.imdb.toString()
                 bnd.tvDescription.text = movie.description
+
+                // init ArtistAdapter and show data on RecyclerView
+                artistAdapter = ArtistAdapter(requireContext(), movie.artistList)
+                bnd.rvArtistList.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+                bnd.rvArtistList.adapter = artistAdapter
+
 
             }
         }

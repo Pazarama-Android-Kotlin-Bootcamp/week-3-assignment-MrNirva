@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#828282</color>
     <color name="black_bg">#1A1A1D</color>
+
+    <color name="round_bg_primary">#131315</color>
+    <color name="round_bg_frame">#5E5E5E</color>
 </resources>
