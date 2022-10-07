@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.arcapp.moviesapp.R
 import com.arcapp.moviesapp.data.MovieModel
 import com.arcapp.moviesapp.data.mockMovieData
+import com.arcapp.moviesapp.databinding.FragmentMovieListBinding
 
 /*
 
@@ -21,29 +22,34 @@ import com.arcapp.moviesapp.data.mockMovieData
 
 class MovieListFragment : Fragment(), MovieListener {
 
-    private lateinit var rvMovieList: RecyclerView
+    // using view binding
+    private lateinit var bnd: FragmentMovieListBinding
     private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_movie_list, container, false)
+    ): View {
+
+        // view binding inflate design
+        bnd = FragmentMovieListBinding.inflate(inflater, container, false)
+        return bnd.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = findNavController()
-        rvMovieList = view.findViewById(R.id.rvMovieList)
         setupAdapter()
     }
 
     private fun setupAdapter() {
 
-        rvMovieList.adapter = MovieAdapter(requireContext(), mockMovieData, this@MovieListFragment)
+        // Access the objects with view binding
+        bnd.rvMovieList.adapter = MovieAdapter(requireContext(), mockMovieData, this@MovieListFragment)
 
         // We shot 2 movies per line with StaggeredGridLayoutManager
-        rvMovieList.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        bnd.rvMovieList.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
 
     }
 

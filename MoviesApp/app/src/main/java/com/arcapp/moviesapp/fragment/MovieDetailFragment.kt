@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.arcapp.moviesapp.R
 import com.arcapp.moviesapp.data.MovieModel
+import com.arcapp.moviesapp.databinding.FragmentMovieDetailBinding
 import com.bumptech.glide.Glide
 
 /*
@@ -20,34 +21,26 @@ import com.bumptech.glide.Glide
 
 class MovieDetailFragment : Fragment() {
 
-    private lateinit var ivMoviePoster:ImageView
-    private lateinit var tvMovieName:TextView
-    private lateinit var tvMovieYear:TextView
-    private lateinit var rbImdb:RatingBar
-    private lateinit var tvImdbPoint:TextView
-    private lateinit var tvDescription:TextView
+    // using view binding
+    private lateinit var bnd:FragmentMovieDetailBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_movie_detail, container, false)
+    ): View {
+
+        // view binding inflate design
+        bnd = FragmentMovieDetailBinding.inflate(layoutInflater, container, false)
+        return bnd.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupViews(view)
+        init()
     }
 
-    private fun setupViews(view: View) {
-
-        ivMoviePoster = view.findViewById(R.id.ivMoviePoster)
-        tvMovieName = view.findViewById(R.id.tvMovieName)
-        tvMovieYear = view.findViewById(R.id.tvMovieYear)
-        rbImdb = view.findViewById(R.id.rbImdb)
-        tvImdbPoint = view.findViewById(R.id.tvImdbPoint)
-        tvDescription = view.findViewById(R.id.tvDescription)
+    private fun init() {
 
         // null state check of data
         arguments?.let {
@@ -63,13 +56,14 @@ class MovieDetailFragment : Fragment() {
                 Glide.with(requireContext())
                     .load(movie.image)
                     .centerCrop()
-                    .into(ivMoviePoster)
+                    .into(bnd.ivMoviePoster)
 
-                tvMovieName.text = movie.name
-                tvMovieYear.text = movie.year.toString()
-                rbImdb.rating = movie.imdb
-                tvImdbPoint.text = movie.imdb.toString()
-                tvDescription.text = movie.description
+                // Access the objects with view binding
+                bnd.tvMovieName.text = movie.name
+                bnd.tvMovieYear.text = movie.year.toString()
+                bnd.rbImdb.rating = movie.imdb
+                bnd.tvImdbPoint.text = movie.imdb.toString()
+                bnd.tvDescription.text = movie.description
 
             }
         }
