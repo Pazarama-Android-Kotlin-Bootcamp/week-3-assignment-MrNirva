@@ -1,8 +1,8 @@
 # Week-3-Assignment
 
-<img src="https://harun.xyz/week-3/s_1.jpg" align="left" height="500" width="250" >
-<img src="https://harun.xyz/week-3/s_2.jpg" align="left" height="500" width="250" >
-<img src="https://harun.xyz/week-3/s_3.jpg" height="500" width="250" >
+<img src="https://github.com/MrNirva/Patika-Pazarama-Bootcamp-Week-3-Task/blob/main/MoviesApp/s_1.jpg" align="left" height="500" width="250" >
+<img src="https://github.com/MrNirva/Patika-Pazarama-Bootcamp-Week-3-Task/blob/main/MoviesApp/s_2.jpg" align="left" height="500" width="250" >
+<img src="https://github.com/MrNirva/Patika-Pazarama-Bootcamp-Week-3-Task/blob/main/MoviesApp/s_3.jpg" height="500" width="250" >
 
 
 
